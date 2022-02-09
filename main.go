@@ -35,18 +35,6 @@ func main() {
 	app.Use(pprof.New())
 
 	SetupRoutes(app)
-	app.Get("/", func(c *fiber.Ctx) error {
-		c.Set("Content-Type", "application/json")
-		c.Status(200).Send([]byte("Hello DB"))
-
-		return nil
-	})
-	app.Post("/go", func(c *fiber.Ctx) error {
-		c.Set("Content-Type", "application/json")
-		c.Status(200).Send([]byte("Hello DB"))
-
-		return nil
-	})
 	fmt.Println("[OK]")
 
 	app.Listen(":2022")
