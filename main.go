@@ -37,6 +37,6 @@ func main() {
 
 	SetupRoutes(app)
 	fmt.Println("[OK]")
-
-	app.Listen(os.Getenv("PORT"))
+	fmt.Println(os.Getenv("PORT"))
+	app.Listen(":" + os.Getenv("PORT"))
 }
