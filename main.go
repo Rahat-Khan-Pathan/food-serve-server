@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"example.com/example/DBManager"
 	"example.com/example/Routes"
@@ -37,5 +38,5 @@ func main() {
 	SetupRoutes(app)
 	fmt.Println("[OK]")
 
-	app.Listen(":2022")
+	app.Listen(os.Getenv("PORT"))
 }
